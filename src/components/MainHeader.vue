@@ -29,28 +29,6 @@
                 </div>
 
                 <div class="mobile-menu">
-                    <router-link
-                        to="/cart"
-                        class="mobile-cart"
-                        aria-label="Go to cart"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="1em"
-                            height="1em"
-                            fill="currentColor"
-                            class="bi bi-bag"
-                            viewBox="0 0 16 16"
-                        >
-                            <path
-                                d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"
-                            />
-                        </svg>
-                        <div class="qty" v-if="cart.length >= 1">
-                            <span>{{ cart.length }}</span>
-                        </div>
-                    </router-link>
-
                     <svg
                         @click="showNav"
                         xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +50,6 @@
 </template>
 
 <script>
-import { mapState, mapActions, mapGetters } from "vuex";
 import ActionButton from "./ActionButton.vue";
 
 export default {
@@ -88,21 +65,12 @@ export default {
         };
     },
     methods: {
-        ...mapActions(["remove_user"]),
         showNav() {
             this.showSideNav = true;
         },
         hideNav() {
             this.showSideNav = false;
         },
-        logout() {
-            this.remove_user();
-            this.$router.push("/login");
-        },
-    },
-    computed: {
-        ...mapState(["user", "cart"]),
-        ...mapGetters(["getHash"]),
     },
 };
 </script>
@@ -131,8 +99,7 @@ header {
     letter-spacing: 2px;
 }
 
-.nav__links a,
-.log-out {
+.nav__links a {
     padding-inline: 15px;
     font-size: 1.8rem;
     font-weight: 600;
@@ -141,9 +108,6 @@ header {
     line-height: 2rem;
 }
 
-.nav__links .log-out {
-    background-color: transparent;
-}
 
 a.active__page,
 .nav__links a:hover,
@@ -185,11 +149,6 @@ a.active__page,
     display: none;
 }
 
-.desktop-cart {
-    display: initial;
-    position: relative;
-}
-
 .mobile-menu {
     display: none;
 }
@@ -198,22 +157,6 @@ a.active__page,
     display: none;
     font-size: 2.1rem;
     cursor: pointer;
-}
-
-.qty {
-    height: 18px;
-    width: 18px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    border-radius: 50%;
-    background-color: var(--dark-blue);
-    font-size: 14px;
-    color: white;
-    font-weight: 500;
-    position: absolute;
-    top: -4px;
-    right: 4px;
 }
 
 .nav-profile {
@@ -294,10 +237,6 @@ a.active__page,
     font-weight: 500;
 }
 
-.log-out {
-    display: none;
-}
-
 /* Media Query */
 
 @media (max-width: 870px) {
@@ -338,8 +277,7 @@ a.active__page,
         right: 0;
     }
 
-    .nav__links a,
-    .log-out {
+    .nav__links a {
         padding: 0.5rem 0;
         font-size: 1.8rem;
     }
@@ -359,20 +297,6 @@ a.active__page,
         display: initial;
     }
 
-    .desktop-cart {
-        display: none;
-    }
-
-    .mobile-cart {
-        position: relative;
-        z-index: 1;
-    }
-    .qty {
-        align-items: center;
-    }
-    .log-out {
-        display: initial;
-    }
     .nav-profile {
         display: none;
     }
