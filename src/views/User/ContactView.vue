@@ -2,9 +2,7 @@
     <main-header />
     <div class="container">
         <div class="form-section">
-            
             <form>
-
                 <span>Leave a message</span>
                 <h3>We love to hear from you</h3>
 

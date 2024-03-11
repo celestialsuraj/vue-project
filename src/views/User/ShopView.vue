@@ -65,11 +65,4 @@ export default {
     color: white;
     border-color: #083e46;
 }
-
-.pagination {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 2rem 0;
-}
 </style>
