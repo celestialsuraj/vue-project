@@ -20,7 +20,7 @@
 
 <script>
 import ProductCard from "@/components/home_components/cards/ProductCard.vue";
-import { products } from "@/data";
+import { product } from "@/data";
 import MainHeader from "@/components/MainHeader.vue";
 
 export default {
@@ -30,39 +30,8 @@ export default {
         MainHeader,},
     data() {
         return {
-            products,
+            product,
         };
     },
 };
 </script>
-
-<style>
-.btn {
-    border: none;
-    background-color: #f2f2f2;
-    padding-inline: 20px;
-    height: 40px;
-    border: 2px solid var(--grey-2);
-    font-size: 1.7rem;
-    margin-inline: 5px;
-    cursor: pointer;
-}
-
-.back-btn,
-.next-btn {
-    background-color: #f2f2f2;
-    color: black;
-}
-
-.btn:hover {
-    background-color: #083e46;
-    border-color: #083e46;
-    color: white;
-}
-
-.btn-active {
-    background-color: #083e46;
-    color: white;
-    border-color: #083e46;
-}
-</style>
