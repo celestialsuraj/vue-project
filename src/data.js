@@ -1,4 +1,4 @@
-   export const product = [
+   export const products = [
         {
             "_id": "621b7029fd494b93bb109626",
             "name": "Women Pink Alexa Super Skinny ",
