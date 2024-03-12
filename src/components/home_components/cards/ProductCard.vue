@@ -33,6 +33,7 @@ export default {
 
 <style scoped>
 .product__card {
+    flex: 1;
     border: 1px solid var(--grey);
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.05s ease-in;
@@ -43,8 +44,7 @@ export default {
 }
 
 .product__image {
-    height: auto;
-    max-width: 100%;
+    max-width: 300px;
     border-radius: 5px;
 }
 
